@@ -17,6 +17,27 @@ module.exports = {
         test: /\.less$/,
         use: ['style-loader', 'css-loader', 'less-loader']
       },
+      // {
+      //   test: /\.(jpe?g|png|svg|gif)$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: 'img/[name]_[hash:6].[ext]'
+      //     }
+      //   }
+      // }
+      {
+        test: /\.(jpe?g|png|svg|gif)$/,
+        type: 'asset',
+        generator: {
+          filename: 'img/[name]_[hash:6][ext]'
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 100 * 1024
+          }
+        }
+      }
     ]
   }
 };
