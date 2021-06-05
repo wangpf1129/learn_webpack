@@ -1,5 +1,7 @@
-const divEl = document.createElement('div')
-divEl.className = 'title'
-divEl.innerHTML = '这是一段内容'
+import '../css/style.css';
 
-document.body.appendChild(divEl)
+const divEl = document.createElement('div');
+divEl.className = 'title';
+divEl.innerHTML = '这是一段内容';
+
+document.body.appendChild(divEl);
