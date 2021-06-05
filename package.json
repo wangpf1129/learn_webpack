@@ -1,0 +1,14 @@
+{
+  "name": "02_webpack_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Wangpf <1204981117@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  }
+}
