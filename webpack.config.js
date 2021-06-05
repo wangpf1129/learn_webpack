@@ -2,6 +2,7 @@ const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {DefinePlugin} = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -50,6 +51,15 @@ module.exports = {
     }),
     new DefinePlugin({
       BASE_URL: '"./"'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: 'public', // 从哪里开始复制
+        to: './', // 复制到哪里 这个 ./ 是根据 出口文件相关的
+        globOptions: {
+          ignore: ['**/index.html']  // 忽略哪个文件
+        }
+      }]
     })
   ]
 };
