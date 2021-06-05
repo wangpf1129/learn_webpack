@@ -1,5 +1,7 @@
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {DefinePlugin} = require('webpack');
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -43,5 +45,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(), // 用来解决每次修改了一些配置，重新打包时，都需要手动删除dist文件夹
+    new HtmlWebpackPlugin({
+      template: './public/index.html'
+    }),
+    new DefinePlugin({
+      BASE_URL: '"./"'
+    })
   ]
 };
