@@ -3,6 +3,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {DefinePlugin} = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const {VueLoaderPlugin} = require('vue-loader/dist/index');
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
@@ -52,6 +53,10 @@ module.exports = {
             presets: [['@babel/preset-env']]
           }
         }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       }
     ]
   },
@@ -61,7 +66,9 @@ module.exports = {
       template: './public/index.html'
     }),
     new DefinePlugin({
-      BASE_URL: '"./"'
+      BASE_URL: '"./"',
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: false
     }),
     new CopyWebpackPlugin({
       patterns: [{
@@ -71,6 +78,7 @@ module.exports = {
           ignore: ['**/index.html']  // 忽略哪个文件
         }
       }]
-    })
+    }),
+    new VueLoaderPlugin()
   ]
 };
