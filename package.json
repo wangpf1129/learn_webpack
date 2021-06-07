@@ -5,7 +5,8 @@
   "author": "Wangpf <1204981117@qq.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "serve": "webpack serve"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -25,7 +26,8 @@
     "style-loader": "^2.0.0",
     "vue-loader": "^16.2.0",
     "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.0"
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "less": "^4.1.1",

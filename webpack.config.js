@@ -5,9 +5,15 @@ const {DefinePlugin} = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader/dist/index');
 module.exports = {
+  target: 'web',
   mode: 'development',
   devtool: 'source-map',
   entry: './src/main.js',
+  devServer: {
+    contentBase: './public',  // 找不到 的资源都往这个文件里找
+    hot: true,
+    open: true
+  },
   output: {
     path: path.resolve(__dirname, './build'),
     filename: 'js/bundle.js',
