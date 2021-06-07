@@ -14,6 +14,11 @@ module.exports = {
     hot: true,
     open: true
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  },
   output: {
     path: path.resolve(__dirname, './build'),
     filename: 'js/bundle.js',
