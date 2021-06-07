@@ -43,6 +43,15 @@ module.exports = {
             maxSize: 100 * 1024
           }
         }
+      },
+      {
+        test: /\.m?js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [['@babel/preset-env']]
+          }
+        }
       }
     ]
   },

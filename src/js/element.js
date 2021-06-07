@@ -11,7 +11,7 @@ bgEl.className = 'bg-image';
 
 const imgEl = document.createElement('img');
 imgEl.src = Img;
-
+const content = 'this is a content'
 console.log(content.length);
 document.body.appendChild(divEl);
 document.body.appendChild(bgEl);
